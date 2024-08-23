@@ -1,10 +1,10 @@
 import Link from "next/link";
-
+import Home from "../../components/home"
 export default function Page() {
   return (
     <div>
-      <h1>About</h1>
-      <Link href="/">Home</Link>
+      <Home></Home>
+      <Link href="/"> </Link>
     </div>
   );
 }
