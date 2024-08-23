@@ -1,10 +1,13 @@
 import Link from "next/link";
-import Home from "../../components/home"
+import Search from "../../components/busqueda/search"
+
 export default function Page() {
   return (
-    <div>
-      <Home></Home>
-      <Link href="/"> </Link>
+    <div style={{ backgroundColor: 'gray' }}>
+      <h1>About</h1>
+      <Link href="/">Home</Link>
+      <Search/>
     </div>
+    
   );
 }
