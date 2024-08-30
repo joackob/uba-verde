@@ -45,7 +45,7 @@ const UbaVerdeGrid = () => {
       <Grid item xs={4} style={{ backgroundColor: '#dcde9f' }} />
       <Grid item xs={1} style={{ backgroundColor: '#A8B575' }} />
 
-      {/* Primera fila*/ }
+      {/* Septima fila*/ }
       <Grid item xs={3} style={{ backgroundColor: '#446129' }} />
       <Grid item xs={4} style={{ backgroundColor: '#dcde9f' }} />
       <Grid item xs={4} style={{ backgroundColor: '#ffffff' }} />

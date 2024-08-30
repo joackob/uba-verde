@@ -1,9 +1,12 @@
+//<Home></Home>
 import Link from "next/link";
 import Home from "../components/home"
+import HomeTablet from "../components/homeTablet"
 export default function Page() {
   return (
     <div>
-      <Home></Home>
+     
+      <HomeTablet></HomeTablet>
       <Link href="/"> </Link>
       </div>
     
