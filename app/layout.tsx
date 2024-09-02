@@ -1,5 +1,4 @@
 "use client";
-import type { Metadata } from "next";
 import Search from "@/components/busqueda/search";
 import Theme from "@/app/theme";
 import "@/styles/globals.css";
@@ -9,7 +8,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { Container } from "@mui/material";
-import { useRouter } from "next/router";
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from "react";
 
 export default function RootLayout({
@@ -17,33 +16,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [inHome, setInHome] = useState(false);
-  const router = useRouter();
+  const [inHome, setInHome] = useState(true);
+  const pathname = usePathname(); 
+
   useEffect(() => {
-    setInHome(router.pathname === "/");
-  });
+    setInHome(pathname === "/");
+  }, [pathname]);
 
   return (
-    <>
-      {inHome && (
-        <Theme>
-          <html lang="es">
-            <body>{children}</body>
-          </html>
-        </Theme>
-      )}
-      {!inHome && (
-        <Theme>
-          <html lang="es">
-            <body>
-              <Container maxWidth={"sm"}>
-                <Search />
-                {children}
-              </Container>
-            </body>
-          </html>
-        </Theme>
-      )}
-    </>
+    <Theme>
+      <html lang="es">
+        <body>
+          {inHome ? (
+            children
+          ) : (
+            <Container maxWidth={"sm"}>
+              <Search />
+              {children}
+            </Container>
+          )}
+        </body>
+      </html>
+    </Theme>
   );
 }
