@@ -1,9 +1,9 @@
 import React from 'react'
-import { Card, CardMedia, CardContent, Typography, } from '@mui/material'
+import { Card, CardMedia, CardContent, Typography, Stack, CardActionArea, Box, } from '@mui/material'
 
 const page = () => {
     return (
-    <><div>Novedades</div><Card sx={{ marginTop:'10px',position: 'relative', maxWidth: 400, borderRadius:'8px'}}>
+        <><div>Novedades</div><Card sx={{ marginTop: '10px', position: 'relative', maxWidth: 400, borderRadius: '8px' }}>
             <CardMedia
                 component="img"
                 height="300"
@@ -18,9 +18,71 @@ const page = () => {
                 textAlign: 'start',
             }}>
                 <Typography variant="h4">{"UBAVERDE"}</Typography>
-                <Typography variant = "h6"> barrendero</Typography>
+                <Typography variant="h6"> barrendero</Typography>
             </CardContent>
-        </Card></>
+        </Card>
+        <Typography fontSize={"h4"} sx={{marginTop:"10px"}}>
+            Ultimas Noticias
+        </Typography>
+            <Stack direction={'column'} >
+                <Card sx={{ display: 'flex', maxWidth: 360, marginTop:"20px"}}>
+                    <CardMedia
+                        component="img"
+                        sx={{ width: 120, height: 120, objectFit: 'cover' }}
+                        image={"https://buenosaires.gob.ar/sites/default/files/inline-images/WhatsApp%20Image%202024-06-18%20at%2016.26.04.jpeg"}
+                        alt={"barrendero"}
+                    />
+                    <Box sx={{ flexDirection: 'column',}}>
+                        <CardContent>
+                            <Typography variant="h6" component="div">
+                                dsadnsjadnjasnd
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                dsadsadasd
+                            </Typography>
+                        </CardContent>
+                    </Box>
+                </Card>
+                <Card sx={{ display: 'flex', maxWidth: 360, marginTop:"20px"}}>
+                    <CardMedia
+                        component="img"
+                        sx={{ width: 120, height: 120, objectFit: 'cover' }}
+                        image={"https://buenosaires.gob.ar/sites/default/files/inline-images/WhatsApp%20Image%202024-06-18%20at%2016.26.04.jpeg"}
+                        alt={"barrendero"}
+                    />
+                    <Box sx={{ flexDirection: 'column',}}>
+                        <CardContent>
+                            <Typography variant="h6" >
+                                dsadnsjadnjasnd
+                            </Typography>
+                            <Typography variant="body1" color="text.secondary">
+                                dsadsadasd
+                            </Typography>
+                        </CardContent>
+                    </Box>
+                </Card>
+                <Card sx={{ display: 'flex', maxWidth: 360, marginTop:"20px"}}>
+                    <CardMedia
+                        component="img"
+                        sx={{ width: 120, height: 120, objectFit: 'cover' }}
+                        image={"https://buenosaires.gob.ar/sites/default/files/inline-images/WhatsApp%20Image%202024-06-18%20at%2016.26.04.jpeg"}
+                        alt={"barrendero"}
+                    />
+                    <Box sx={{ flexDirection: 'column',}}>
+                        <CardContent>
+                            <Typography variant="h6" component="div">
+                                dsadnsjadnjasnd
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                dsadsadasd
+                            </Typography>
+                        </CardContent>
+                    </Box>
+                </Card>
+            </Stack>
+
+        </>
+
 
     )
 }

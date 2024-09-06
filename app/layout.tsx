@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Theme from "@/app/theme";
-
+import search from "@/components/search"
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -19,7 +19,11 @@ export default function RootLayout({
   return (
     <Theme>
       <html lang="es">
-        <body>{children}</body>
+        
+
+        <body>{children}
+        <search/>
+        </body>
       </html>
     </Theme>
   );
