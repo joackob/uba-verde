@@ -28,34 +28,34 @@ const Botones = () => {
     return <>
     
         <Link href={"/about"} passHref >
-            <Button variant="contained"  sx={{backgroundColor:"transparent" }}>
-                <ImportContactsIcon sx={{ color: 'white', maxHeight: "24px", maxWidth: "24px", }} />
+            <Button variant="contained"  sx={{backgroundColor:"transparent",maxHeight:"24px"  }}>
+                <ImportContactsIcon sx={{ color: 'white',  }} />
             </Button>
 
         </Link>
         <Link href={""}>
-            <Button variant="contained"  sx={{ backgroundColor:"transparent" }}>
-            <ListAltIcon sx={{color: "white",width:"24px",height:"24px"}}/>
+            <Button variant="contained"  sx={{ backgroundColor:"transparent",maxHeight:"24px" }}>
+            <ListAltIcon sx={{color: "white",}}/>
             </Button>
         </Link>
         <Link href={""}>
-            <Button variant="contained"  sx={{ backgroundColor:"transparent" }}>
-                <AccountBoxIcon sx={{ color: 'white',width:"24px",height:"24px" }}  />
+            <Button variant="contained"  sx={{ backgroundColor:"transparent", maxHeight:"24px" }}>
+                <AccountBoxIcon sx={{ color: 'white', }}  />
             </Button>
         </Link>
         <Link href={""}>
-            <Button variant="contained" sx={{ backgroundColor:"transparent" }}>
-                <LocationOnIcon sx={{ color: 'white', height: "24px", width: "24px" }} />
+            <Button variant="contained" sx={{ backgroundColor:"transparent",maxHeight:"24px" }}>
+                <LocationOnIcon sx={{ color: 'white',  }} />
             </Button>
         </Link>
 
         <Button
             variant="contained"
             
-            sx={{ backgroundColor:"transparent" }}
+            sx={{ backgroundColor:"transparent",maxHeight:"24px" }}
             onClick={handleShareClick}
             >
-            <ShareIcon sx={{ color: 'white', height: "24px", width: "24px" }} />
+            <ShareIcon sx={{ color: 'white', }} />
         </Button>
             
 
