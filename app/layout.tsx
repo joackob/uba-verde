@@ -8,7 +8,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { Container } from "@mui/material";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [inHome, setInHome] = useState(true);
-  const pathname = usePathname(); 
+  const pathname = usePathname();
 
   useEffect(() => {
     setInHome(pathname === "/");
