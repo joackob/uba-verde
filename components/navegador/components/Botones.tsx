@@ -1,47 +1,37 @@
-"use client"; //Esto es necesario cuando el componente usa funcionalidades que deben ejecutarse en el cliente.
-
-import React from "react";
-import Button from "@mui/material/Button/Button";
-import ImportContactsIcon from "@mui/icons-material/ImportContacts";
+"use client";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import ShareIcon from "@mui/icons-material/Share";
-import ListAltIcon from "@mui/icons-material/ListAlt";
+import HomeIcon from "@mui/icons-material/Home";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { Box } from "@mui/material";
+import NewspaperIcon from "@mui/icons-material/Newspaper";
 
 const enlaces = [
   {
-    nombre: "Acerca de",
-    url: "/about",
-    icono: ImportContactsIcon,
+    nombre: "Tratameinto de residuos",
+    url: "/tratamiento-de-residuos",
+    icono: HomeIcon,
   },
   {
-    nombre: "Servicios",
-    url: "/services",
-    icono: ListAltIcon,
+    nombre: "Novedades",
+    url: "/novedades",
+    icono: NewspaperIcon,
+  },
+  {
+    nombre: "Promotores",
+    url: "/map",
+    icono: LocationOnIcon,
   },
   {
     nombre: "Contacto",
     url: "/contact",
     icono: AccountBoxIcon,
   },
-  {
-    nombre: "Ubicación",
-    url: "/location",
-    icono: LocationOnIcon,
-  },
 ];
 
 const Botones = () => {
-  const router = useRouter(); //permite acceder a la información de la ruta actual y manipular la navegación en una aplicación Next.js
-
   const handleShareClick = () => {
-    // Obtén la URL actual
     const currentUrl = window.location.href;
-
-    // Copia la URL al portapapeles
     navigator.clipboard
       .writeText(currentUrl)
       .then(() => {
