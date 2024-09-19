@@ -1,10 +1,13 @@
 import React from "react";
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
+import { Resumen } from "@/utils/resumenes";
 
-const TarjetaResumen = () => {
+const TarjetaResumen = ({ titulo, descripcion, portada, slug }: Resumen) => {
   return (
     <Card
       elevation={0}
+      component={"a"}
+      href={slug}
       sx={{ display: "flex", backgroundColor: "transparent" }}
     >
       <CardMedia
@@ -15,9 +18,7 @@ const TarjetaResumen = () => {
           objectFit: "cover",
           borderRadius: "8px",
         }}
-        image={
-          "https://buenosaires.gob.ar/sites/default/files/inline-images/WhatsApp%20Image%202024-06-18%20at%2016.26.04.jpeg"
-        }
+        image={portada}
         alt={"barrendero"}
       />
       <CardContent>
@@ -29,7 +30,7 @@ const TarjetaResumen = () => {
             color: "#313237",
           }}
         >
-          Titulo de noticia
+          {titulo}
         </Typography>
         <Typography
           style={{
@@ -39,7 +40,7 @@ const TarjetaResumen = () => {
             color: "#313237",
           }}
         >
-          dsadsadasd
+          {descripcion}
         </Typography>
       </CardContent>
     </Card>

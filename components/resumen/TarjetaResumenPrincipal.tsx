@@ -1,9 +1,17 @@
 import React from "react";
 import { Card, CardMedia, CardContent, Typography, Stack } from "@mui/material";
+import { Resumen } from "@/utils/resumenes";
 
-const TarjetaResumenPrincipal = () => {
+const TarjetaResumenPrincipal = ({
+  titulo,
+  descripcion,
+  portada,
+  slug,
+}: Resumen) => {
   return (
     <Card
+      component={"a"}
+      href={slug}
       sx={{
         position: "relative",
         borderRadius: "16px",
@@ -12,10 +20,8 @@ const TarjetaResumenPrincipal = () => {
       <CardMedia
         component="img"
         height="300"
-        image={
-          "https://t2.uc.ltmcdn.com/es/posts/4/2/5/salario_47524_2_orig.jpg"
-        }
-        alt="Imagen de la card"
+        image={portada}
+        alt="Imagen de la tarjeta"
       />
       <CardContent
         sx={{
@@ -34,7 +40,7 @@ const TarjetaResumenPrincipal = () => {
             fontSize: "22px",
           }}
         >
-          titulo
+          {titulo}
         </Typography>
         <Typography
           style={{
@@ -43,7 +49,7 @@ const TarjetaResumenPrincipal = () => {
             fontSize: "16px",
           }}
         >
-          Descripción
+          {descripcion}
         </Typography>
       </CardContent>
     </Card>

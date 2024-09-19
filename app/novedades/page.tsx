@@ -1,17 +1,7 @@
-import ContenedorNovedades from "@/components/resumen/ContenedorResumenes";
-import TarjetaNoticiaPrincipal from "@/components/resumen/TarjetaResumenPrincipal";
-import GaleriaNoticias from "@/components/resumen/GaleriaResumenes";
-import TarjetaNoticia from "@/components/resumen/TarjetaResumen";
+import PaginaConResumenes from "@/components/resumen/PageResumenes";
 
 const page = () => {
-  return (
-    <ContenedorNovedades>
-      <TarjetaNoticiaPrincipal />
-      <GaleriaNoticias>
-        <TarjetaNoticia />
-      </GaleriaNoticias>
-    </ContenedorNovedades>
-  );
+  return <PaginaConResumenes contentDir={"content"} pathname={"/novedades"} />;
 };
 
 export default page;

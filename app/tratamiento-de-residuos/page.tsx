@@ -1,17 +1,7 @@
-import ContenedorManuales from "@/components/resumen/ContenedorResumenes";
-import TarjetaManualPrincipal from "@/components/resumen/TarjetaResumenPrincipal";
-import GaleriaManuales from "@/components/resumen/GaleriaResumenes";
-import TarjetaManual from "@/components/resumen/TarjetaResumen";
+import PaginaConResumenes from "@/components/resumen/PageResumenes";
 
 const page = () => {
-  return (
-    <ContenedorManuales>
-      <TarjetaManualPrincipal />
-      <GaleriaManuales>
-        <TarjetaManual />
-      </GaleriaManuales>
-    </ContenedorManuales>
-  );
+  return <PaginaConResumenes contentDir={"content"} pathname={"/novedades"} />;
 };
 
 export default page;
