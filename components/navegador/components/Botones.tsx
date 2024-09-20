@@ -1,10 +1,9 @@
-"use client";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import ShareIcon from "@mui/icons-material/Share";
 import HomeIcon from "@mui/icons-material/Home";
 import Link from "next/link";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
+import BotonCompartir from "./BotonCompartir";
 
 const enlaces = [
   {
@@ -30,17 +29,6 @@ const enlaces = [
 ];
 
 const Botones = () => {
-  const handleShareClick = () => {
-    const currentUrl = window.location.href;
-    navigator.clipboard
-      .writeText(currentUrl)
-      .then(() => {
-        alert("Enlace copiado al portapapeles");
-      })
-      .catch((err) => {
-        console.error("Error al copiar el enlace: ", err);
-      });
-  };
   return (
     <>
       {enlaces.map((enlace) => (
@@ -49,9 +37,7 @@ const Botones = () => {
         </Link>
       ))}
 
-      <Link href={""} onClick={handleShareClick}>
-        <ShareIcon sx={{ color: "white" }} />
-      </Link>
+      <BotonCompartir />
     </>
   );
 };

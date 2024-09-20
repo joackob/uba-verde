@@ -5,6 +5,7 @@ import type { MDXComponents } from "mdx/types";
 export const customComponents: MDXComponents = {
   h1: ({ children }) => (
     <Typography
+      component={"h1"}
       sx={{
         color: "#313237",
         fontFamily: "Roboto",
@@ -20,6 +21,7 @@ export const customComponents: MDXComponents = {
 
   h2: ({ children }) => (
     <Typography
+      component={"h2"}
       sx={{
         color: "#313237",
         fontFamily: "Roboto",
@@ -33,12 +35,25 @@ export const customComponents: MDXComponents = {
     </Typography>
   ),
   img: (props) => (
-    <Box my={"16px"} height={"318px"} position={"relative"}>
-      <Image fill style={{ objectFit: "cover" }} {...(props as ImageProps)} />
+    <Box
+      component={"span"}
+      my={"16px"}
+      height={"318px"}
+      width={"100%"}
+      position={"relative"}
+      display={"block"}
+    >
+      <Image
+        fill
+        priority
+        style={{ objectFit: "cover" }}
+        {...(props as ImageProps)}
+      />
     </Box>
   ),
   p: ({ children }) => (
     <Typography
+      component={"p"}
       sx={{
         color: "#313237",
         fontFamily: "Roboto",

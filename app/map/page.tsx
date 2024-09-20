@@ -1,5 +1,3 @@
-"use client";
-
 import SimpleMap from "@/components/map";
 
 export default function Page() {

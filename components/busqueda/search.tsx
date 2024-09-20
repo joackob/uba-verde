@@ -1,27 +1,29 @@
-import { Box, Typography, TextField } from "@mui/material";
+"use client";
+import { Box, Typography, TextField, Stack } from "@mui/material";
+import { usePathname } from "next/navigation";
 
 export default function Search() {
+  const pathname = usePathname();
+  const titleHeader = new Map<string, string>();
+  titleHeader.set("novedades", "Novedades");
+  titleHeader.set("tratamiento-de-residuos", "Tratamiento de residuos");
+
   return (
-    <Box>
+    <Stack spacing={"16px"} mt={"32px"} mb={"16px"}>
       <Typography
         sx={{
-          width: "398px",
           color: "#313237",
           fontFamily: "Roboto",
           fontWeight: "bold",
-          fontSize: 28,
-          lineHeight: "36px",
+          fontSize: "28px",
           textAlign: "left",
-          padding: 1,
         }}
       >
-        Novedades
+        {titleHeader.get(pathname.split("/")[1])}
       </Typography>
       <Box
         sx={{
           height: "56px",
-          maxWidth: "720px",
-          minWidth: "360px",
           backgroundColor: "#FFFFFF", // Se agregó la coma aquí
           borderRadius: "8px",
           display: "flex",
@@ -66,6 +68,6 @@ export default function Search() {
           <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
         </svg>
       </Box>
-    </Box>
+    </Stack>
   );
 }
