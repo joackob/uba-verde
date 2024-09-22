@@ -18,11 +18,12 @@ const Contenedor = ({ children }: { children: ReactNode }) => {
         spacing={"24px"}
         direction="row"
         bgcolor={"#91A661"}
+        alignItems={"center"}
         sx={{
           border: "none",
           borderRadius: "32px",
           boxShadow: "0px 4px 4px 0px #0006",
-          padding: "16px 24px",
+          padding: "12px 16px",
           justifyContent: "center",
           "& button": {
             fontSize: {

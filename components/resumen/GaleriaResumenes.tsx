@@ -1,7 +1,13 @@
 import { ReactNode } from "react";
 import { Typography, Stack } from "@mui/material";
 
-const GaleriaResumenes = ({ children }: { children: ReactNode }) => {
+const GaleriaResumenes = ({
+  encabezado,
+  children,
+}: {
+  encabezado: string;
+  children: ReactNode;
+}) => {
   return (
     <Stack spacing={"16px"}>
       <Typography
@@ -12,7 +18,7 @@ const GaleriaResumenes = ({ children }: { children: ReactNode }) => {
           color: "#313237",
         }}
       >
-        Ultimas Noticias
+        {encabezado}
       </Typography>
       {children}
     </Stack>

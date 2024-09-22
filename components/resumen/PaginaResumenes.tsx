@@ -5,15 +5,17 @@ import TarjetaResumen from "@/components/resumen/TarjetaResumen";
 import resumenes from "@/utils/resumenes";
 
 type PaginaConResumenesProps = {
-  contentDir: string;
-  pathname: string;
+  carpetaConContenido: string;
+  seccionAAnexarLosArticulos: string;
+  encabezadoParaLaGaleria: string;
 };
 
 const PaginaConResumenes = ({
-  contentDir,
-  pathname,
+  encabezadoParaLaGaleria,
+  carpetaConContenido: contentDir,
+  seccionAAnexarLosArticulos: pathname,
 }: PaginaConResumenesProps) => {
-  const [principal, ...otros] = resumenes.obtenerDesde(contentDir);
+  const [principal, ...otros] = resumenes.obtenerMetadatos(contentDir);
 
   return (
     <ContenedorResumenes>
@@ -21,7 +23,7 @@ const PaginaConResumenes = ({
         {...principal}
         slug={`${pathname}/${principal.slug}`}
       />
-      <GaleriaResumenes>
+      <GaleriaResumenes encabezado={encabezadoParaLaGaleria}>
         {otros.map((articulo) => (
           <TarjetaResumen
             {...articulo}

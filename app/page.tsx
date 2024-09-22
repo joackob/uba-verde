@@ -1,4 +1,4 @@
-import HomeTablet from "../components/homeTablet";
+import HomeTablet from "@/components/home/homeTablet";
 export default function Page() {
   return <HomeTablet />;
 }

@@ -7,24 +7,40 @@ const ResumenParser = z.object({
   titulo: z.string(),
   descripcion: z.string(),
   portada: z.string(),
+  slug: z.string(),
 });
 
-export type Resumen = z.infer<typeof ResumenParser> & { slug: string };
+export type Resumen = z.infer<typeof ResumenParser>;
 
-export const obtenerDesde = (dir: string): Resumen[] => {
-  const postsDirectory = path.join(process.cwd(), dir);
-  const filenames = fs.readdirSync(postsDirectory);
-  const metadata = filenames.map((filename) => {
-    const fullPath = path.join(postsDirectory, filename);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const { data } = matter(fileContents);
-    const parse = ResumenParser.safeParse(data);
-    if (!parse.success) {
-      throw new Error(parse.error.errors[0].message);
-    }
-    return { ...parse.data, slug: filename.replace(/\.mdx$/, "") };
-  });
-  return metadata;
+export const obtenerMetadatos = (dir: string): Resumen[] => {
+  try {
+    const contenido = obtenerContenidoDeCadaArticulo(dir);
+    const metadatos = parsearMetadatos(contenido);
+    return metadatos;
+  } catch (error) {
+    console.error("Error al obtener los resúmenes de los artículos", error);
+    return [];
+  }
 };
 
-export default { obtenerDesde };
+const obtenerContenidoDeCadaArticulo = (dir: string) => {
+  const directorioConArticulos = path.join(process.cwd(), dir);
+  const nombresDeArticulos = fs.readdirSync(directorioConArticulos);
+  return nombresDeArticulos.map((articulo) => {
+    const direccionCompleta = path.join(directorioConArticulos, articulo);
+    const contenido = fs.readFileSync(direccionCompleta, "utf8");
+    const { data } = matter(contenido);
+    return { ...data, slug: articulo.replace(/\.mdx$/, "") };
+  });
+};
+
+const parsearMetadatos = (
+  metadatos: ReturnType<typeof obtenerContenidoDeCadaArticulo>
+): z.infer<typeof ResumenParser>[] => {
+  return metadatos.map((metadato) => {
+    const metadatoParseado = ResumenParser.parse(metadato);
+    return metadatoParseado;
+  });
+};
+
+export default { obtenerMetadatos };

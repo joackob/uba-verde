@@ -1,5 +1,6 @@
 "use client";
 import ShareIcon from "@mui/icons-material/Share";
+import { Tooltip } from "@mui/material";
 
 const BotonCompartir = () => {
   const handleShareClick = () => {
@@ -14,18 +15,21 @@ const BotonCompartir = () => {
       });
   };
   return (
-    <button
-      onClick={handleShareClick}
-      style={{
-        padding: 0,
-        border: "none",
-        height: "24px",
-        width: "24px",
-        backgroundColor: "transparent",
-      }}
-    >
-      <ShareIcon sx={{ color: "white" }} />
-    </button>
+    <Tooltip placement="top" title={"Compartir este sitio"}>
+      <button
+        onClick={handleShareClick}
+        style={{
+          padding: 0,
+          border: "none",
+          height: "24px",
+          width: "24px",
+          backgroundColor: "transparent",
+          cursor: "pointer",
+        }}
+      >
+        <ShareIcon sx={{ color: "white" }} />
+      </button>
+    </Tooltip>
   );
 };
 

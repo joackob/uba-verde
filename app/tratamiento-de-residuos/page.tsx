@@ -1,7 +1,13 @@
-import PaginaConResumenes from "@/components/resumen/PageResumenes";
+import PaginaConResumenes from "@/components/resumen/PaginaResumenes";
 
 const page = () => {
-  return <PaginaConResumenes contentDir={"content"} pathname={"/novedades"} />;
+  return (
+    <PaginaConResumenes
+      encabezadoParaLaGaleria={"Información que te puede interesar"}
+      carpetaConContenido={"content"}
+      seccionAAnexarLosArticulos={"/novedades"}
+    />
+  );
 };
 
 export default page;
