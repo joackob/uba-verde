@@ -7,7 +7,7 @@ import Image from "next/image";
 import { customComponents } from "@/mdx-components";
 
 // Definir la ruta de los archivos MDX
-const postsDirectory = path.join(process.cwd(), "content");
+const postsDirectory = path.join(process.cwd(), "manuales");
 
 // Función para generar rutas dinámicas
 export function generateStaticParams() {

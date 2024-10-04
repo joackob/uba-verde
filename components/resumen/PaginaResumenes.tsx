@@ -27,7 +27,7 @@ const PaginaConResumenes = ({
         {otros.map((articulo) => (
           <TarjetaResumen
             {...articulo}
-            slug={`${pathname}/${principal.slug}`}
+            slug={`${pathname}/${articulo.slug}`}
             key={articulo.slug}
           />
         ))}

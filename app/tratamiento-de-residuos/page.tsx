@@ -4,8 +4,8 @@ const page = () => {
   return (
     <PaginaConResumenes
       encabezadoParaLaGaleria={"Información que te puede interesar"}
-      carpetaConContenido={"content"}
-      seccionAAnexarLosArticulos={"/novedades"}
+      carpetaConContenido={"manuales"}
+      seccionAAnexarLosArticulos={"/tratamiento-de-residuos"}
     />
   );
 };
