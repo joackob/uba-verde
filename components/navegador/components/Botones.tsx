@@ -10,7 +10,7 @@ import { Tooltip } from "@mui/material";
 
 const enlaces = [
   {
-    nombre: "Tratameinto de residuos",
+    nombre: "Tratamiento de residuos",
     url: "/tratamiento-de-residuos",
     icono: HomeIcon,
   },
