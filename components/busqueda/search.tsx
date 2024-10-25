@@ -1,6 +1,7 @@
 "use client";
 import { Box, Typography, TextField, Stack } from "@mui/material";
 import { usePathname } from "next/navigation";
+import { useRef } from "react";
 
 export default function Search() {
   const pathname = usePathname();
@@ -8,10 +9,12 @@ export default function Search() {
   titleHeader.set("novedades", "Novedades");
   titleHeader.set("tratamiento-de-residuos", "Tratamiento de residuos");
 
+  const refSearch = useRef<HTMLInputElement>(null);
+
   return (
     <Stack spacing={"16px"} mt={"32px"} mb={"16px"}>
       <Typography
-        sx={{
+        style={{
           color: "#313237",
           fontFamily: "Roboto",
           fontWeight: "bold",
@@ -22,7 +25,13 @@ export default function Search() {
         {titleHeader.get(pathname.split("/")[1])}
       </Typography>
       <Box
-        sx={{
+        component="form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          console.log("Buscando...");
+          console.log(refSearch.current.value);
+        }}
+        style={{
           height: "56px",
           backgroundColor: "#FFFFFF", // Se agregó la coma aquí
           borderRadius: "8px",
@@ -36,6 +45,7 @@ export default function Search() {
         <TextField
           placeholder="Buscar"
           variant="outlined"
+          inputProps={{ ref: refSearch }}
           sx={{
             width: "94%", // Añadir minWidth aquí
             "& .MuiOutlinedInput-root": {

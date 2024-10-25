@@ -6,7 +6,7 @@ const nextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   // Imagens rand for prototypesa
   images: {
-    domains: ['img.freepik.com'], 
+    // domains: ['img.freepik.com'], 
     remotePatterns: [
       {
         protocol: "https",
