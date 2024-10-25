@@ -29,7 +29,6 @@ export default function Search() {
         onSubmit={(e) => {
           e.preventDefault();
           console.log("Buscando...");
-          console.log(refSearch.current.value);
         }}
         style={{
           height: "56px",
