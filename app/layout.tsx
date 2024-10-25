@@ -5,6 +5,8 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import Navegador from "@/components/navegador";
 import { Container } from "@mui/material";
+import Head from "next/head";
+import Link from "next/link";
 
 export default function RootLayout({
   children,
@@ -13,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <head>{/* Aquí puedes incluir elementos <meta>, <link>, etc. */}</head>
+      <Head>
+        <Link rel="icon" href="/favicon.ico" type="image/png"/>
+      </Head>
       <body>
         <Container maxWidth={"sm"}>
           {children}
