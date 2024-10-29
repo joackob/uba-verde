@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "pagefind --site .next --output-path public/pagefind",
+    "postbuild": "bunx pagefind --site .next --output-path public/pagefind",
     "start": "next start",
     "tests:e2e": "bun run build && bunx playwright test",
     "tests": "bunx playwright test"
