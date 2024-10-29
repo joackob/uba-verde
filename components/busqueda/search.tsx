@@ -1,6 +1,6 @@
 "use client";
 import { Box, Typography, TextField, Stack } from "@mui/material";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useRef } from "react";
 
 export default function Search() {
@@ -10,6 +10,8 @@ export default function Search() {
   titleHeader.set("tratamiento-de-residuos", "Tratamiento de residuos");
 
   const refSearch = useRef<HTMLInputElement>(null);
+  const params = useSearchParams();
+  const router = useRouter();
 
   return (
     <Stack spacing={"16px"} mt={"32px"} mb={"16px"}>
@@ -28,7 +30,12 @@ export default function Search() {
         component="form"
         onSubmit={(e) => {
           e.preventDefault();
-          console.log("Buscando...");
+          console.log(refSearch.current?.value);
+          if (refSearch.current?.value) {
+            const parametros = new URLSearchParams(params);
+            parametros.set("consulta", refSearch.current?.value);
+            router.push(`/buscar?${parametros.toString()}`);
+          }
         }}
         style={{
           height: "56px",
