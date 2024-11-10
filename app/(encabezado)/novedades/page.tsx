@@ -4,8 +4,8 @@ const page = () => {
   return (
     <PaginaConResumenes
       encabezadoParaLaGaleria="Últimas novedades"
-      carpetaConContenido={"content"}
-      seccionAAnexarLosArticulos={"/novedades"}
+      carpetaConContenido={"novedades"}
+      rutaBaseParaEnlaces={"/novedades"}
     />
   );
 };

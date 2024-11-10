@@ -6,7 +6,7 @@ const nextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   // Imagens rand for prototypesa
   images: {
-    // domains: ['img.freepik.com'], 
+    // domains: ['img.freepik.com'],
     remotePatterns: [
       {
         protocol: "https",
@@ -16,8 +16,13 @@ const nextConfig = {
         protocol: "https",
         hostname: "source.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "img.freepik.com",
+      },
     ],
   },
+  reactStrictMode: true,
 };
 const withMDX = createMDX({
   // Add markdown plugins here, as desired

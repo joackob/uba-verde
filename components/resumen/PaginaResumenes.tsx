@@ -2,33 +2,34 @@ import ContenedorResumenes from "@/components/resumen/ContenedorResumenes";
 import TarjetaResumenPrincipal from "@/components/resumen/TarjetaResumenPrincipal";
 import GaleriaResumenes from "@/components/resumen/GaleriaResumenes";
 import TarjetaResumen from "@/components/resumen/TarjetaResumen";
-import resumenes from "@/utils/resumenes";
+import { obtenerMetadatosDeTodosLosArticulosEnUnaCarpeta } from "@/utils/obtener-metadatos-de-todos-los-articulos-en-una-carpeta";
 
 type PaginaConResumenesProps = {
   carpetaConContenido: string;
-  seccionAAnexarLosArticulos: string;
   encabezadoParaLaGaleria: string;
+  rutaBaseParaEnlaces: string;
 };
 
 const PaginaConResumenes = ({
   encabezadoParaLaGaleria,
-  carpetaConContenido: contentDir,
-  seccionAAnexarLosArticulos: pathname,
+  carpetaConContenido,
+  rutaBaseParaEnlaces,
 }: PaginaConResumenesProps) => {
-  const [principal, ...otros] = resumenes.obtenerMetadatos(contentDir);
+  const [principal, ...otros] =
+    obtenerMetadatosDeTodosLosArticulosEnUnaCarpeta(carpetaConContenido);
 
   return (
     <ContenedorResumenes>
       <TarjetaResumenPrincipal
         {...principal}
-        slug={`${pathname}/${principal.slug}`}
+        archivo={`${rutaBaseParaEnlaces}/${principal.archivo}`}
       />
       <GaleriaResumenes encabezado={encabezadoParaLaGaleria}>
         {otros.map((articulo) => (
           <TarjetaResumen
             {...articulo}
-            slug={`${pathname}/${articulo.slug}`}
-            key={articulo.slug}
+            archivo={`${rutaBaseParaEnlaces}/${articulo.archivo}`}
+            key={articulo.archivo}
           />
         ))}
       </GaleriaResumenes>

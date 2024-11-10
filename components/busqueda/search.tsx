@@ -30,7 +30,6 @@ export default function Search() {
         component="form"
         onSubmit={(e) => {
           e.preventDefault();
-          console.log(refSearch.current?.value);
           if (refSearch.current?.value) {
             const parametros = new URLSearchParams(params);
             parametros.set("consulta", refSearch.current?.value);

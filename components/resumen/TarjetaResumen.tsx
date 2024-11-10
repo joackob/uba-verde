@@ -1,8 +1,12 @@
-import React from "react";
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
-import { Resumen } from "@/utils/resumenes";
+import { MetadatosDeUnArticulo } from "@/utils/obtener-metadatos-de-todos-los-articulos-en-una-carpeta";
 
-const TarjetaResumen = ({ titulo, descripcion, portada, slug }: Resumen) => {
+const TarjetaResumen = ({
+  titulo,
+  descripcion,
+  portada,
+  archivo: slug,
+}: MetadatosDeUnArticulo) => {
   return (
     <Card
       elevation={0}

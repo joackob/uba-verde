@@ -7,6 +7,40 @@ import Navegador from "@/components/navegador";
 import { Container } from "@mui/material";
 import Head from "next/head";
 import Link from "next/link";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "UBA Verde",
+  description: "Gestión y educación ambiental en la UBA",
+  icons: [
+    {
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+      href: "/apple-touch-icon.png",
+      url: "/apple-touch-icon.png",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      url: "/favicon-32x32.png",
+      href: "/favicon-32x32.png",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      url: "/favicon-16x16.png",
+      href: "/favicon-16x16.png",
+    },
+    {
+      rel: "icon",
+      url: "/favicon.ico",
+      href: "/favicon.ico",
+      type: "image/ico",
+    },
+  ],
+  manifest: "/site.webmanifest",
+};
 
 export default function RootLayout({
   children,
@@ -15,9 +49,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <Head>
-        <Link rel="icon" href="/favicon.ico" type="image/png"/>
-      </Head>
       <body>
         <Container maxWidth={"sm"}>
           {children}

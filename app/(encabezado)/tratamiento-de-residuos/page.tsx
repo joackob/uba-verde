@@ -5,7 +5,7 @@ const page = () => {
     <PaginaConResumenes
       encabezadoParaLaGaleria={"Información que te puede interesar"}
       carpetaConContenido={"manuales"}
-      seccionAAnexarLosArticulos={"/tratamiento-de-residuos"}
+      rutaBaseParaEnlaces={"/tratamiento-de-residuos"}
     />
   );
 };

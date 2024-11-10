@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "bunx pagefind --site .next --output-path public/pagefind",
+    "postbuild": "bunx pagefind --site .next --output-path ./public/pagefind",
     "start": "next start",
     "tests:e2e": "bun run build && bunx playwright test",
     "tests": "bunx playwright test"
@@ -31,6 +31,7 @@
     "@playwright/test": "^1.40.1",
     "@types/node": "20.10.4",
     "@types/react": "18.2.45",
+    "pagefind": "^1.2.0",
     "typescript": "5.3.3"
   }
 }
