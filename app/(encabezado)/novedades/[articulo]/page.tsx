@@ -1,24 +1,19 @@
 export const dynamicParams = false;
+import { obtenerElNombreDeTodosLosArticulosEnUnaCarpeta } from "@/utils/obtener-el-nombre-de-todos-los-articulos-en-una-carpeta";
+import { lazy } from "react";
 
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { customComponents } from "@/mdx-components";
-import { obtenerContenidosDeTodosLosArticulosEnUnaCarpeta } from "@/utils/obtener-contenido-de-todos-los-articulos-en-una-carpeta";
-
-const contenidoDeTodosLosArticulos =
-  obtenerContenidosDeTodosLosArticulosEnUnaCarpeta("novedades");
-
-const Page = async ({ params }: { params: { articulo: string } }) => {
-  const { articulo } = params;
-  const contenido = contenidoDeTodosLosArticulos.find(
-    (contenidoDeUnArticulo) => contenidoDeUnArticulo.articulo === articulo,
-  )?.contenido;
-  return <MDXRemote source={contenido!} components={customComponents} />;
+const Page = async ({ params }: { params: Promise<{ articulo: string }> }) => {
+  const { articulo } = await params;
+  const Contenido = lazy(() => import(`@/novedades/${articulo}.mdx`));
+  return <Contenido />;
 };
 
 export const generateStaticParams = () => {
-  return contenidoDeTodosLosArticulos.map((contenido) => ({
-    articulo: contenido.articulo,
-  }));
+  return obtenerElNombreDeTodosLosArticulosEnUnaCarpeta("novedades").map(
+    ({ articulo }) => ({
+      slug: articulo,
+    })
+  );
 };
 
 export default Page;
