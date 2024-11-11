@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node ./utils/copiar-todos-los-articulos-de-una-carpeta-a-app.mjs",
+    "prebuild": "bun ./utils/copiar-todos-los-articulos-de-una-carpeta-a-app.ts",
     "build": "next build",
     "postbuild": "bunx pagefind --site .next --output-path ./public/pagefind --verbose",
     "start": "next start",

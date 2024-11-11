@@ -1,11 +1,14 @@
-import path from "path";
-import fs from "fs";
-import matter from "gray-matter";
+import path from "node:path";
+import fs from "node:fs";
 
-export const copiarTodosLosArticulosDeUnaCarpetaAApp = (
+export const copiarTodosLosArticulosDeUnaCarpetaAApp = ({
   carpetaConArticulosATratar,
-  carpetaDestino
-) => {
+  carpetaDestino,
+}: {
+  carpetaConArticulosATratar: string;
+  carpetaDestino: string;
+}) => {
+  console.table({ carpetaConArticulosATratar, carpetaDestino });
   const direccionAbsolutaDeLaCarpataContenedora = path.join(
     process.cwd(),
     carpetaConArticulosATratar
@@ -42,9 +45,12 @@ export const copiarTodosLosArticulosDeUnaCarpetaAApp = (
   );
 };
 
-copiarTodosLosArticulosDeUnaCarpetaAApp(
-  "manuales",
-  "app/content/tratamiento-de-residuos"
-);
+copiarTodosLosArticulosDeUnaCarpetaAApp({
+  carpetaConArticulosATratar: "manuales",
+  carpetaDestino: "app/content/tratamiento-de-residuos",
+});
 
-copiarTodosLosArticulosDeUnaCarpetaAApp("novedades", "app/content/novedades");
+copiarTodosLosArticulosDeUnaCarpetaAApp({
+  carpetaConArticulosATratar: "novedades",
+  carpetaDestino: "app/content/novedades",
+});

@@ -1,16 +1,18 @@
 "use client";
 import ContenedorResumenes from "@/components/resumen/ContenedorResumenes";
 import GaleriaResumenes from "@/components/resumen/GaleriaResumenes";
-import TarjetaResumen from "@/components/resumen/TarjetaResumen";
-import { MetadatosDeUnArticulo } from "@/utils/obtener-metadatos-de-todos-los-articulos-en-una-carpeta";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { z } from "zod";
+import TarjetaParaElResultadoDeUnaBusqueda from "./components/TarjetaParaElResultadoDeUnaBusqueda";
 
 const page = () => {
   const params = useSearchParams();
   const consulta = params.get("consulta") || "";
-  const [resultados, setResultados] = useState<MetadatosDeUnArticulo[]>([]);
-  //
+  const [resultados, setResultados] = useState<ResultadosEnCrudoDeUnaBusqueda>(
+    [],
+  );
+
   useEffect(() => {
     (async () => {
       // const pagefind = await import('@/public/pagefind/pagefind.js');
@@ -44,27 +46,54 @@ const page = () => {
       // @ts-expect-error pagefind is not defined
       const search = await window.pagefind.search(consulta);
       console.log(search.results);
-      // setResults(search.results);
+      const { data, success } = EsquemaParaLosResultadosEnCrudo.safeParse(
+        await Promise.all(
+          search.results.map(async (result: any) => {
+            const data = await result.data();
+            console.log(data);
+            return {
+              titulo: data.meta.title,
+              descripcion: data.excerpt,
+              url: data.url,
+            };
+          }),
+        ),
+      );
+
+      if (success) {
+        setResultados(data);
+      }
     })();
   }, [consulta]);
-
-  const cantidadDeResultados = resultados.length;
 
   return (
     <ContenedorResumenes>
       <GaleriaResumenes
-        encabezado={`Se encontraron ${cantidadDeResultados} resultados para la consulta: ${consulta}`}
+        encabezado={`Se encontraron ${resultados.length} resultados para la consulta: ${consulta}`}
       >
-        {resultados.map((articulo) => (
-          <TarjetaResumen
-            {...articulo}
-            archivo={`/${articulo.archivo}`}
-            key={articulo.archivo}
+        {resultados.map((resultado) => (
+          <TarjetaParaElResultadoDeUnaBusqueda
+            key={resultado.titulo}
+            titulo={resultado.titulo}
+            descripcion={resultado.descripcion}
+            url={resultado.url}
           />
         ))}
       </GaleriaResumenes>
     </ContenedorResumenes>
   );
 };
+
+const EsquemaParaLosResultadosEnCrudo = z.array(
+  z.object({
+    titulo: z.string(),
+    descripcion: z.string(),
+    url: z.string(),
+  }),
+);
+
+type ResultadosEnCrudoDeUnaBusqueda = z.infer<
+  typeof EsquemaParaLosResultadosEnCrudo
+>;
 
 export default page;

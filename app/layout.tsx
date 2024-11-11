@@ -49,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body>
+      <body data-pagefind-body>
         <Container maxWidth={"sm"}>
           {children}
           <Navegador />
