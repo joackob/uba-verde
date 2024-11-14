@@ -5,8 +5,6 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import Navegador from "@/components/navegador";
 import { Container } from "@mui/material";
-import Head from "next/head";
-import Link from "next/link";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "UBA Verde",
@@ -50,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body data-pagefind-body>
-        <Container maxWidth={"sm"}>
+        <Container maxWidth={"sm"} component={"main"}>
           {children}
           <Navegador />
         </Container>

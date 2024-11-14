@@ -37,7 +37,12 @@ const UbaVerdeGrid = () => {
           >
             .UBA
             <span
-              style={{ color: "#8AAA3F", fontWeight: 400, fontSize: "64px" }}
+              style={{
+                color: "#8AAA3F",
+                fontWeight: 400,
+                fontSize: "64px",
+                textShadow: "0px 2px 2px #12121280",
+              }}
             >
               VERDE
             </span>
