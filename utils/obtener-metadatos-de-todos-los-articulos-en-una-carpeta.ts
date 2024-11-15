@@ -35,9 +35,10 @@ const obtenerDatosDeCadaArticulo = (
     process.cwd(),
     carpetaConArticulosATratar
   );
-  const nombresDeCadaUnoDeLosArchivosEncontrados = fs.readdirSync(
-    direccionCompletaDeLaCarpetaContenedora
-  );
+  const nombresDeCadaUnoDeLosArchivosEncontrados = fs
+    .readdirSync(direccionCompletaDeLaCarpetaContenedora)
+    .filter((nombre) => nombre.includes(".mdx"));
+
   return nombresDeCadaUnoDeLosArchivosEncontrados.map((nombreDeUnArticulo) => {
     const direccionCompletaDelArticulo = path.join(
       direccionCompletaDeLaCarpetaContenedora,

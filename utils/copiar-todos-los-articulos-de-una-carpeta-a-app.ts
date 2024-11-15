@@ -14,9 +14,9 @@ export const copiarTodosLosArticulosDeUnaCarpetaAApp = ({
     carpetaConArticulosATratar
   );
 
-  const nombresDeCadaUnoDeLosArticulosEncontrados = fs.readdirSync(
-    direccionAbsolutaDeLaCarpataContenedora
-  );
+  const nombresDeCadaUnoDeLosArticulosEncontrados = fs
+    .readdirSync(direccionAbsolutaDeLaCarpataContenedora)
+    .filter((nombre) => nombre.includes(".mdx"));
 
   nombresDeCadaUnoDeLosArticulosEncontrados.forEach(
     (nombreDeUnArticuloEncontrado) => {

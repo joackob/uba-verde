@@ -9,9 +9,9 @@ export const obtenerElNombreDeTodosLosArticulosEnUnaCarpeta = (
     process.cwd(),
     carpetaConArticulosATratar
   );
-  const nombresDeCadaUnoDeLosArticulosEncontrados = fs.readdirSync(
-    direccionAbsolutaDeLaCarpateContenedora
-  );
+  const nombresDeCadaUnoDeLosArticulosEncontrados = fs
+    .readdirSync(direccionAbsolutaDeLaCarpateContenedora)
+    .filter((nombre) => nombre.includes(".mdx"));
 
   const articulosConSuNombre = nombresDeCadaUnoDeLosArticulosEncontrados.map(
     (nombreDeUnArticuloEncontrado) => {

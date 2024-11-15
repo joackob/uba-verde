@@ -1,4 +1,12 @@
-import { Box, Typography } from "@mui/material";
+import {
+  Box,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  Typography,
+} from "@mui/material";
 import Image, { ImageProps } from "next/image";
 import type { MDXComponents } from "mdx/types";
 
@@ -48,6 +56,7 @@ export const customComponents: MDXComponents = {
         priority
         style={{ objectFit: "cover" }}
         {...(props as ImageProps)}
+        src={((props as ImageProps).src as string).replace(/^\./, "")}
       />
     </Box>
   ),
@@ -81,6 +90,15 @@ export const customComponents: MDXComponents = {
       {children}
     </Typography>
   ),
+  table: ({ children }) => (
+    <Table style={{ border: "1px", margin: "16px 0px" }}>{children}</Table>
+  ),
+  thead: ({ children }) => <TableHead>{children}</TableHead>,
+  tr: ({ children }) => <TableRow>{children}</TableRow>,
+  th: ({ children }) => (
+    <TableCell style={{ padding: "1px" }}>{children}</TableCell>
+  ),
+  tbody: ({ children }) => <TableBody>{children}</TableBody>,
 };
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {

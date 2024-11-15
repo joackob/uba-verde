@@ -1,10 +1,7 @@
-import AccountBoxIcon from "@mui/icons-material/AccountBox";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import HomeIcon from "@mui/icons-material/Home";
 import Link from "next/link";
-import NewspaperIcon from "@mui/icons-material/Newspaper";
 import BotonCompartir from "./BotonCompartir";
 import { Tooltip } from "@mui/material";
 
@@ -14,11 +11,11 @@ const enlaces = [
     url: "/tratamiento-de-residuos",
     icono: HomeIcon,
   },
-  {
-    nombre: "Novedades",
-    url: "/novedades",
-    icono: NewspaperIcon,
-  },
+  // {
+  //   nombre: "Novedades",
+  //   url: "/novedades",
+  //   icono: NewspaperIcon,
+  // },
   {
     nombre: "Email de contacto de UBA Verde",
     url: "mailto:uba.verde@uba.ar",
