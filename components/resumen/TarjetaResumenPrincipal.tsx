@@ -49,7 +49,7 @@ const TarjetaResumenPrincipal = ({
             fontSize: "16px",
           }}
         >
-          {descripcion}
+          {descripcion.split(" ").slice(0, 16).join(" ")}...
         </Typography>
       </CardContent>
     </Card>

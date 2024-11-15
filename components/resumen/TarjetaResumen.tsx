@@ -44,7 +44,7 @@ const TarjetaResumen = ({
             color: "#313237",
           }}
         >
-          {descripcion}
+          {descripcion.split(" ").slice(0, 16).join(" ")}...
         </Typography>
       </CardContent>
     </Card>
