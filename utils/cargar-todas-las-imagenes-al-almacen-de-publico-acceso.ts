@@ -12,39 +12,72 @@ export const cargarImagenesAlAlmacen = ({
     carpetaConImagenesATratar,
     carpetaDestino,
   });
-  const direccionAbsolutaDeLaCarpataContenedora = path.join(
-    process.cwd(),
+  const imagenesEncontradas = intentarObtenerTodasLasImagenesDeLaCarpeta(
     carpetaConImagenesATratar,
   );
-
-  const imagenesEncontradas = fs
-    .readdirSync(direccionAbsolutaDeLaCarpataContenedora)
-    .filter((nombre) => nombre.includes(".png"))
-    .map((nombreDeUnaImagenEncontrada) => {
-      return {
-        direccion: path.join(
-          direccionAbsolutaDeLaCarpataContenedora,
-          nombreDeUnaImagenEncontrada,
-        ),
-        nombre: nombreDeUnaImagenEncontrada,
-      };
-    });
-
-  imagenesEncontradas.forEach((imagen) => {
-    fs.mkdirSync(path.join(process.cwd(), carpetaDestino));
-    fs.copyFileSync(
-      imagen.direccion,
-      path.join(process.cwd(), carpetaDestino, imagen.nombre),
-    );
+  intentarCargarLasImagenes({
+    imagenes: imagenesEncontradas,
+    almacen: carpetaDestino,
   });
+};
+
+const intentarObtenerTodasLasImagenesDeLaCarpeta = (carpeta: string) => {
+  try {
+    const direccionAbsolutaDeLaCarpataContenedora = path.join(
+      process.cwd(),
+      carpeta,
+    );
+
+    const imagenesEncontradas = fs
+      .readdirSync(direccionAbsolutaDeLaCarpataContenedora)
+      .filter((nombre) => nombre.includes(".png"))
+      .map((nombreDeUnaImagenEncontrada) => {
+        return {
+          direccion: path.join(
+            direccionAbsolutaDeLaCarpataContenedora,
+            nombreDeUnaImagenEncontrada,
+          ),
+          nombre: nombreDeUnaImagenEncontrada,
+        };
+      });
+
+    return imagenesEncontradas;
+  } catch (error) {
+    console.error(
+      `Error al intentar obtener las imágenes de la carpeta ${carpeta}`,
+    );
+    return [];
+  }
+};
+
+const intentarCargarLasImagenes = ({
+  imagenes,
+  almacen,
+}: {
+  imagenes: ReturnType<typeof intentarObtenerTodasLasImagenesDeLaCarpeta>;
+  almacen: string;
+}) => {
+  try {
+    // si no existe, crear la carpeta destino
+    fs.mkdirSync(path.join(process.cwd(), almacen), { recursive: true });
+
+    imagenes.forEach((imagen) => {
+      fs.copyFileSync(
+        imagen.direccion,
+        path.join(process.cwd(), almacen, imagen.nombre),
+      );
+    });
+  } catch (error) {
+    console.error("Error al intentar cargar las imágenes");
+  }
 };
 
 cargarImagenesAlAlmacen({
   carpetaConImagenesATratar: "manuales/assets",
-  carpetaDestino: "app/content/tratamiento-de-residuos",
+  carpetaDestino: "public/assets",
 });
 
 cargarImagenesAlAlmacen({
   carpetaConImagenesATratar: "novedades/assets",
-  carpetaDestino: "app/content/novedades",
+  carpetaDestino: "public/assets",
 });

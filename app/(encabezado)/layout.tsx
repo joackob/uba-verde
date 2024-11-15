@@ -16,8 +16,7 @@ export default function RootLayout({
     <Suspense>
       <Search />
       {children}
-      <Box height={"16vh"} />
-      <Box component={"footer"}>
+      <Box component={"footer"} style={{ margin: "4vh 0px 8vh 0px" }}>
         <Typography
           textAlign={"center"}
           sx={{
