@@ -30,7 +30,7 @@ const TarjetaResumenPrincipal = ({
           width: "100%",
           color: "white",
           textAlign: "start",
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          backgroundColor: "rgba(0, 0, 0, 0.8)",
         }}
       >
         <Typography

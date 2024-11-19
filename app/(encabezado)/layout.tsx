@@ -22,7 +22,7 @@ export default function RootLayout({
           sx={{
             color: "#313237",
             fontFamily: "Roboto",
-            fontWeight: "400",
+            fontWeight: "700",
             fontSize: "16px",
             lineHeight: "24px",
             marginBottom: "16px",
