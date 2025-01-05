@@ -42,3 +42,5 @@ public/pagefind
 app/content/
 
 public/assets/
+# playwright
+/test-results/
