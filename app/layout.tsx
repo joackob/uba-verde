@@ -3,9 +3,11 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import Navegador from "@/components/navegador";
+import BarraDeNavegacion from "@/components/barra-de-nagacion";
 import { Container } from "@mui/material";
 import { Metadata } from "next";
+import { ReactNode } from "react";
+
 export const metadata: Metadata = {
   title: "UBA Verde",
   description: "Gestión y educación ambiental en la UBA",
@@ -46,13 +48,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <LayoutParaTodoElSitio>
+      {children}
+      <BarraDeNavegacion />
+    </LayoutParaTodoElSitio>
+  );
+}
+
+const LayoutParaTodoElSitio = ({
+  children,
+}: Readonly<{ children: ReactNode }>) => {
+  return (
     <html lang="es">
       <body data-pagefind-body>
         <Container maxWidth={"sm"} component={"main"}>
           {children}
-          <Navegador />
         </Container>
       </body>
     </html>
   );
-}
+};

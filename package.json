@@ -8,7 +8,7 @@
     "start": "next start",
     "tests:e2e": "bun run build && bunx playwright test",
     "tests": "bunx playwright test",
-    "test:create": "bunx playwright codegen"
+    "tests:create": "bunx playwright codegen"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",

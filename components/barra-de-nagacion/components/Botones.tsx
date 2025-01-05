@@ -8,7 +8,7 @@ import { Tooltip } from "@mui/material";
 const enlaces = [
   {
     nombre: "Tratamiento de residuos",
-    url: "/tratamiento-de-residuos",
+    url: "/manuales-tutoriales-y-otros-materiales-de-consulta",
     icono: HomeIcon,
   },
   // {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 
-const UbaVerdeGrid = () => {
+const PortadaDeBienvenida = () => {
   return (
     <Grid container spacing={0} style={{ height: "100vh" }}>
       {/* Primera fila */}
@@ -74,4 +74,4 @@ const UbaVerdeGrid = () => {
   );
 };
 
-export default UbaVerdeGrid;
+export default PortadaDeBienvenida;

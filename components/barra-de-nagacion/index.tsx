@@ -1,7 +1,7 @@
 import Botones from "./components/Botones";
 import Contenedor from "./components/Contenedor";
 
-const index = () => {
+const BarraDeNavegacion = () => {
   return (
     <Contenedor>
       <Botones />
@@ -9,4 +9,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default BarraDeNavegacion;

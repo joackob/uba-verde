@@ -1,4 +1,4 @@
-import HomeTablet from "@/components/home/homeTablet";
+import PortadaDeBienvenida from "@/components/portada-de-bienvenida/PortadaDeBienvenida";
 export default function Page() {
-  return <HomeTablet />;
+  return <PortadaDeBienvenida />;
 }

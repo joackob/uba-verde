@@ -11,7 +11,6 @@ const TarjetaResumen = ({
 }) => {
   return (
     <Card
-      elevation={1}
       component={"a"}
       href={url
         .replace(/\.html$/, "")
