@@ -1,7 +1,11 @@
-import { LinearProgress } from "@mui/material";
+import { Box, LinearProgress } from "@mui/material";
 
 const BarraDeProgresoParaUnaConsultaEnProceso = () => {
-  return <LinearProgress />;
+  return (
+    <Box color={"#dcde9f"}>
+      <LinearProgress color="inherit" />
+    </Box>
+  );
 };
 
 export default BarraDeProgresoParaUnaConsultaEnProceso;

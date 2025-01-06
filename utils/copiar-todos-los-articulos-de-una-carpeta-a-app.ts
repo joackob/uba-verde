@@ -11,7 +11,7 @@ export const copiarTodosLosArticulosDeUnaCarpetaAApp = ({
   console.table({ carpetaConArticulosATratar, carpetaDestino });
   const direccionAbsolutaDeLaCarpataContenedora = path.join(
     process.cwd(),
-    carpetaConArticulosATratar
+    carpetaConArticulosATratar,
   );
 
   const nombresDeCadaUnoDeLosArticulosEncontrados = fs
@@ -22,15 +22,15 @@ export const copiarTodosLosArticulosDeUnaCarpetaAApp = ({
     (nombreDeUnArticuloEncontrado) => {
       const direccionAbsolutaDelArticuloATratar = path.join(
         direccionAbsolutaDeLaCarpataContenedora,
-        nombreDeUnArticuloEncontrado
+        nombreDeUnArticuloEncontrado,
       );
       fs.mkdirSync(
         path.join(
           process.cwd(),
           carpetaDestino,
-          nombreDeUnArticuloEncontrado.replace(".mdx", "")
+          nombreDeUnArticuloEncontrado.replace(".mdx", ""),
         ),
-        { recursive: true }
+        { recursive: true },
       );
       fs.copyFileSync(
         direccionAbsolutaDelArticuloATratar,
@@ -38,19 +38,20 @@ export const copiarTodosLosArticulosDeUnaCarpetaAApp = ({
           process.cwd(),
           carpetaDestino,
           nombreDeUnArticuloEncontrado.replace(".mdx", ""),
-          "/page.mdx"
-        )
+          "/page.mdx",
+        ),
       );
-    }
+    },
   );
 };
 
 copiarTodosLosArticulosDeUnaCarpetaAApp({
   carpetaConArticulosATratar: "manuales",
-  carpetaDestino: "app/content/tratamiento-de-residuos",
+  carpetaDestino:
+    "app/content/manuales-tutoriales-y-otros-materiales-de-consulta",
 });
 
 copiarTodosLosArticulosDeUnaCarpetaAApp({
   carpetaConArticulosATratar: "novedades",
-  carpetaDestino: "app/content/novedades",
+  carpetaDestino: "app/content/portal-de-noticias-con-enlaces-a-redes-sociales",
 });
