@@ -1,7 +1,7 @@
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 import { MetadatosDeUnArticulo } from "@/utils/obtener-metadatos-de-todos-los-articulos-en-una-carpeta";
 
-const TarjetaResumen = ({
+const TarjetaConResumenDeArticulo = ({
   titulo,
   descripcion,
   portada,
@@ -51,4 +51,4 @@ const TarjetaResumen = ({
   );
 };
 
-export default TarjetaResumen;
+export default TarjetaConResumenDeArticulo;

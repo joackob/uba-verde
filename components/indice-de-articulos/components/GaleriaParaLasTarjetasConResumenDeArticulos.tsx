@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Typography, Stack } from "@mui/material";
 
-const GaleriaResumenes = ({
+const GaleriaParaLasTarjetasConResumenDeArticulos = ({
   encabezado,
   children,
 }: {
@@ -25,4 +25,4 @@ const GaleriaResumenes = ({
   );
 };
 
-export default GaleriaResumenes;
+export default GaleriaParaLasTarjetasConResumenDeArticulos;

@@ -15,8 +15,6 @@ export const obtenerMetadatosDeTodosLosArticulosEnUnaCarpeta = (
   return metadatosDeCadaArticulo;
 };
 
-// Funciones auxiliares
-
 const EsquemaParaLosMetadatosDeUnArticulo = z.object({
   titulo: z.string(),
   descripcion: z.string(),

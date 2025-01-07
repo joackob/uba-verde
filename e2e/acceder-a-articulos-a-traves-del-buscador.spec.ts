@@ -12,7 +12,7 @@ test.describe("Como usuario, deseo encontrar articulos dentro del sitio a traves
     await page.getByPlaceholder("Buscar").press("Enter");
     await page.waitForTimeout(500);
     await expect(page.getByRole("main")).toContainText(
-      "PROTOCOLO PARA EL TRATAMIENTO DE RESIDUOS ORGÁNICOS EN LA UNIVERSIDAD DE BUENOS AIRES"
+      "Protocolo para el Tratamiento de Residuos Orgánicos en la Universidad de Buenos Aires"
     );
   });
 

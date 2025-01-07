@@ -1,6 +1,6 @@
 "use client";
-import ContenedorResumenes from "@/components/resumen/ContenedorResumenes";
-import GaleriaResumenes from "@/components/resumen/GaleriaResumenes";
+import ContenedorResumenes from "@/components/indice-de-articulos/components/ContendorDeTarjetasConResumenDeArticulos";
+import GaleriaParaLasTarjetasConResumenDeArticulos from "@/components/indice-de-articulos/components/GaleriaParaLasTarjetasConResumenDeArticulos";
 import TarjetaParaElResultadoDeUnaBusqueda from "./components/TarjetaParaElResultadoDeUnaBusqueda";
 import { useBusquedaEnArticulos } from "./hooks";
 import BarraDeProgresoParaUnaConsultaEnProceso from "./components/BarraDeProgresoParaUnaConsultaEnProceso";
@@ -11,7 +11,7 @@ const page = () => {
 
   return (
     <ContenedorResumenes>
-      <GaleriaResumenes
+      <GaleriaParaLasTarjetasConResumenDeArticulos
         encabezado={
           busqueda.cargando()
             ? `Buscando articulos para la consulta: ${busqueda.consulta()}`
@@ -35,7 +35,7 @@ const page = () => {
                 url={resultado.url}
               />
             ))}
-      </GaleriaResumenes>
+      </GaleriaParaLasTarjetasConResumenDeArticulos>
     </ContenedorResumenes>
   );
 };

@@ -1,7 +1,11 @@
 import React, { ReactNode } from "react";
 import { Stack } from "@mui/material";
 
-const ContendorResumenes = ({ children }: { children: ReactNode }) => {
+const ContendorDeTarjetasConResumenDeArticulos = ({
+  children,
+}: {
+  children: ReactNode;
+}) => {
   return (
     <Stack spacing={"16px"} my={"16px"}>
       {children}
@@ -9,4 +13,4 @@ const ContendorResumenes = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default ContendorResumenes;
+export default ContendorDeTarjetasConResumenDeArticulos;

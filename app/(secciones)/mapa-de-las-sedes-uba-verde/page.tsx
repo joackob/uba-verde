@@ -1,4 +1,4 @@
-import SimpleMap from "@/components/map";
+import SimpleMap from "@/app/(secciones)/mapa-de-las-sedes-uba-verde/components/map";
 
 export default function Page() {
   return (

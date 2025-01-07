@@ -1,8 +1,8 @@
-import PaginaConResumenes from "@/components/resumen/PaginaResumenes";
+import IndiceDeArticulos from "@/components/indice-de-articulos";
 
 const page = () => {
   return (
-    <PaginaConResumenes
+    <IndiceDeArticulos
       encabezadoParaLaGaleria="Últimas novedades"
       carpetaConContenido={"novedades"}
       rutaBaseParaEnlaces={"/novedades"}
