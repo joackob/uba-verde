@@ -4,6 +4,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import Link from "next/link";
 import BotonCompartir from "./BotonCompartir";
 import { Tooltip } from "@mui/material";
+import MapIcon from '@mui/icons-material/Map';
 
 const enlaces = [
   {
@@ -25,6 +26,12 @@ const enlaces = [
     nombre: "Instagram de UBA Verde",
     url: "https://www.instagram.com/uba.verde/",
     icono: InstagramIcon,
+  },
+
+  {
+    nombre: "Sedes",
+    url: "/manuales-tutoriales-y-otros-materiales-de-consulta",
+    icono: MapIcon,
   },
   // {
   //   nombre: "Promotores",
