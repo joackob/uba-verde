@@ -7,6 +7,8 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { Box, Typography } from "@mui/material";
 import { ReactNode, Suspense } from "react";
+import Link from "next/link";
+
 
 export default function RootLayout({
   children,
@@ -37,7 +39,11 @@ const MensajeETEC = () => (
         marginBottom: "16px",
       }}
     >
-      Hecho con 💕 por ETEC-UBA
+     <Link href="/etec" passHref>
+        <span style={{ color: "#313237", textDecoration: "none", cursor: "pointer" }}>
+          Hecho con 💕 por ETEC-UBA
+        </span>
+      </Link>
     </Typography>
   </Box>
 );
