@@ -39,11 +39,12 @@ const MensajeETEC = () => (
         marginBottom: "16px",
       }}
     >
-     <Link href="/etec" passHref>
-        <span style={{ color: "#313237", textDecoration: "none", cursor: "pointer" }}>
-          Hecho con 💕 por ETEC-UBA
-        </span>
-      </Link>
+     <Link href="/EspacioNosotros" passHref>
+  <span style={{ color: "#313237", textDecoration: "none", cursor: "pointer" }}>
+    Hecho con 💕 por ETEC-UBA
+  </span>
+</Link>
+
     </Typography>
   </Box>
 );
