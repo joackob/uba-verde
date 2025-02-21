@@ -1,10 +1,15 @@
-import SimpleMap from "@/app/(secciones)/mapa-de-las-sedes-uba-verde/components/map";
+import { Chip, Stack } from '@mui/material';  // Importa Stack también
+import { handleClientScriptLoad } from 'next/script';
+import React from 'react';
 
-export default function Page() {
+const Page = () => {
   return (
-    <div>
-      <h1>Mapa</h1>
-      <SimpleMap />
+    <div style={{ height: '100vh', backgroundColor: 'white' }}>
+      <Stack direction="row" spacing={3}> {}
+        <Chip label="Medicina" onClick={handleClientScriptLoad} />
+      </Stack>
     </div>
   );
-}
+};
+
+export default Page;

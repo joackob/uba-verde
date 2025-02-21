@@ -29,15 +29,10 @@ const enlaces = [
   },
 
   {
-    nombre: "Sedes",
-    url: "/manuales-tutoriales-y-otros-materiales-de-consulta",
+    nombre: "Mapa de Sedes",
+    url: "/mapa-de-las-sedes-uba-verde",
     icono: MapIcon,
   },
-  // {
-  //   nombre: "Promotores",
-  //   url: "/map",
-  //   icono: LocationOnIcon,
-  // },
 ];
 
 const Botones = () => {
@@ -46,7 +41,7 @@ const Botones = () => {
       {enlaces.map((enlace) => (
         <Tooltip placement="top" title={enlace.nombre} key={enlace.nombre}>
           <Link href={enlace.url} style={{ height: "24px" }}>
-            {<enlace.icono sx={{ color: "white" }} />}
+            {<enlace.icono sx={{ color: "White" }} />}
           </Link>
         </Tooltip>
       ))}
