@@ -27,8 +27,8 @@ const EspacioNosotros = () => {
       }}
     >
       {/* H1 Personalizable */}
-      <Typography 
-        component="h1" 
+      <Typography
+        component="h1"
         sx={{ fontSize: "32px", fontWeight: "bold", mb: 2 }}
       >
         📌 Equipo de trabajo
@@ -50,7 +50,13 @@ const EspacioNosotros = () => {
       </Stack>
 
       {}
-      <Typography variant="h4" fontWeight="bold" gutterBottom mt={4} color =" #729e66 ">
+      <Typography
+        variant="h4"
+        fontWeight="bold"
+        gutterBottom
+        mt={4}
+        color=" #729e66 "
+      >
         Líderes de Equipo
       </Typography>
       <Stack spacing={2} sx={{ width: "100%", maxWidth: "400px", mb: 6 }}>

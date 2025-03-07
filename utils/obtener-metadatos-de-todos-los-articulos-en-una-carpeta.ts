@@ -4,13 +4,13 @@ import fs from "fs";
 import z from "zod";
 
 export const obtenerMetadatosDeTodosLosArticulosEnUnaCarpeta = (
-  carpetaConArticulosATratar: string
+  carpetaConArticulosATratar: string,
 ): MetadatosDeUnArticulo[] => {
   const datosEnCrudoDeCadaArticulo = obtenerDatosDeCadaArticulo(
-    carpetaConArticulosATratar
+    carpetaConArticulosATratar,
   );
   const metadatosDeCadaArticulo = parsearMetadatosDeCadaArticulo(
-    datosEnCrudoDeCadaArticulo
+    datosEnCrudoDeCadaArticulo,
   );
   return metadatosDeCadaArticulo;
 };
@@ -27,11 +27,11 @@ export type MetadatosDeUnArticulo = z.infer<
 >;
 
 const obtenerDatosDeCadaArticulo = (
-  carpetaConArticulosATratar: string
+  carpetaConArticulosATratar: string,
 ): any[] => {
   const direccionCompletaDeLaCarpetaContenedora = path.join(
     process.cwd(),
-    carpetaConArticulosATratar
+    carpetaConArticulosATratar,
   );
   const nombresDeCadaUnoDeLosArchivosEncontrados = fs
     .readdirSync(direccionCompletaDeLaCarpetaContenedora)
@@ -40,7 +40,7 @@ const obtenerDatosDeCadaArticulo = (
   return nombresDeCadaUnoDeLosArchivosEncontrados.map((nombreDeUnArticulo) => {
     const direccionCompletaDelArticulo = path.join(
       direccionCompletaDeLaCarpetaContenedora,
-      nombreDeUnArticulo
+      nombreDeUnArticulo,
     );
     const contenido = fs.readFileSync(direccionCompletaDelArticulo, "utf8");
     const { data } = matter(contenido);
@@ -49,12 +49,12 @@ const obtenerDatosDeCadaArticulo = (
 };
 
 const parsearMetadatosDeCadaArticulo = (
-  metadatosEnCrudo: any[]
+  metadatosEnCrudo: any[],
 ): MetadatosDeUnArticulo[] => {
   return metadatosEnCrudo.filter((matadatosAParsearDeUnArticulo) => {
     const { success: metadatosCorrectamenteFormados } =
       EsquemaParaLosMetadatosDeUnArticulo.safeParse(
-        matadatosAParsearDeUnArticulo
+        matadatosAParsearDeUnArticulo,
       );
     return metadatosCorrectamenteFormados;
   });

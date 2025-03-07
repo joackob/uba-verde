@@ -12,15 +12,15 @@ const EncabezadoParaCadaSeccionDelSitio = ({
   const encabezados = new Map<string, string>();
   encabezados.set(
     "consultas-en-articulos-y-noticias",
-    "Consultas y sus resultados"
+    "Consultas y sus resultados",
   );
   encabezados.set(
     "manuales-tutoriales-y-otros-materiales-de-consulta",
-    "Manuales, tutoriales y otros materiales"
+    "Manuales, tutoriales y otros materiales",
   );
   encabezados.set(
     "portal-de-noticias-con-sus-enlaces-a-redes-sociales",
-    "Portal de noticias"
+    "Portal de noticias",
   );
   encabezados.set("mapa-de-las-sedes-uba-verde", "Mapa de las sedes UBA Verde");
   return (

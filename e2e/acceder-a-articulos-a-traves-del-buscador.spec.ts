@@ -12,7 +12,7 @@ test.describe("Como usuario, deseo encontrar articulos dentro del sitio a traves
     await page.getByPlaceholder("Buscar").press("Enter");
     await page.waitForTimeout(500);
     await expect(page.getByRole("main")).toContainText(
-      "Protocolo para el Tratamiento de Residuos Orgánicos en la Universidad de Buenos Aires"
+      "Protocolo para el Tratamiento de Residuos Orgánicos en la Universidad de Buenos Aires",
     );
   });
 
@@ -25,7 +25,7 @@ test.describe("Como usuario, deseo encontrar articulos dentro del sitio a traves
     await page.getByPlaceholder("Buscar").press("Enter");
     await page.waitForTimeout(500);
     await expect(page.getByRole("main")).toContainText(
-      "Protocolo para la Separación de Residuos en la Universidad de Buenos Aires"
+      "Protocolo para la Separación de Residuos en la Universidad de Buenos Aires",
     );
   });
 });

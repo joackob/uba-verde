@@ -15,7 +15,7 @@ test.describe("Como usuario, deseo poder acceder a los articulos encontrados en 
       .click();
 
     await expect(page).toHaveURL(
-      "http://localhost:3000/manuales-tutoriales-y-otros-materiales-de-consulta/protocolo-uba-para-residuos-organicos"
+      "http://localhost:3000/manuales-tutoriales-y-otros-materiales-de-consulta/protocolo-uba-para-residuos-organicos",
     );
   });
 });

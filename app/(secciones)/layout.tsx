@@ -9,7 +9,6 @@ import { Box, Typography } from "@mui/material";
 import { ReactNode, Suspense } from "react";
 import Link from "next/link";
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -39,12 +38,17 @@ const MensajeETEC = () => (
         marginBottom: "16px",
       }}
     >
-     <Link href="/EspacioNosotros" passHref>
-  <span style={{ color: "#313237", textDecoration: "none", cursor: "pointer" }}>
-    Hecho con 💕 por ETEC-UBA
-  </span>
-</Link>
-
+      <Link href="/equipo-de-trabajo-etec" passHref>
+        <span
+          style={{
+            color: "#313237",
+            textDecoration: "none",
+            cursor: "pointer",
+          }}
+        >
+          Hecho con 💕 por ETEC-UBA
+        </span>
+      </Link>
     </Typography>
   </Box>
 );

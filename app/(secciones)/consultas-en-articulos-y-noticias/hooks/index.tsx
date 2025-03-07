@@ -27,7 +27,7 @@ export const useBusquedaEnArticulos = () => {
               descripcion: datos.excerpt,
               url: datos.url,
             };
-          })
+          }),
         );
         const resultadosParseados =
           EsquemaParaLosResultadosEnCrudo.parse(resultadosEnCrudo);
@@ -52,7 +52,7 @@ const EsquemaParaLosResultadosEnCrudo = z.array(
     titulo: z.string(),
     descripcion: z.string(),
     url: z.string(),
-  })
+  }),
 );
 
 type ResultadosEnCrudoDeUnaBusqueda = z.infer<

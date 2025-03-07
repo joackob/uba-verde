@@ -12,7 +12,7 @@ export const generateStaticParams = () => {
   return obtenerElNombreDeTodosLosArticulosEnUnaCarpeta("novedades").map(
     ({ articulo }) => ({
       slug: articulo,
-    })
+    }),
   );
 };
 

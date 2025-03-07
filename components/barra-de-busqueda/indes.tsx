@@ -17,7 +17,7 @@ export default function BarraDeBusqueda() {
           const parametros = new URLSearchParams(params);
           parametros.set("consulta", refSearch.current?.value);
           router.push(
-            `/consultas-en-articulos-y-noticias?${parametros.toString()}`
+            `/consultas-en-articulos-y-noticias?${parametros.toString()}`,
           );
         }
       }}

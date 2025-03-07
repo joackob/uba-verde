@@ -12,7 +12,7 @@ export const generateStaticParams = () => {
   return obtenerElNombreDeTodosLosArticulosEnUnaCarpeta("manuales").map(
     ({ articulo }) => ({
       articulo,
-    })
+    }),
   );
 };
 

@@ -2,11 +2,11 @@ import path from "path";
 import fs from "fs";
 
 export const obtenerElNombreDeTodosLosArticulosEnUnaCarpeta = (
-  carpetaConArticulosATratar: string
+  carpetaConArticulosATratar: string,
 ) => {
   const direccionAbsolutaDeLaCarpateContenedora = path.join(
     process.cwd(),
-    carpetaConArticulosATratar
+    carpetaConArticulosATratar,
   );
   const nombresDeCadaUnoDeLosArticulosEncontrados = fs
     .readdirSync(direccionAbsolutaDeLaCarpateContenedora)
@@ -17,7 +17,7 @@ export const obtenerElNombreDeTodosLosArticulosEnUnaCarpeta = (
       return {
         articulo: nombreDeUnArticuloEncontrado.replace(/\.mdx$/, ""),
       };
-    }
+    },
   );
 
   return articulosConSuNombre;

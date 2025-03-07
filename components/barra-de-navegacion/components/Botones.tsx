@@ -4,7 +4,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import Link from "next/link";
 import BotonCompartir from "./BotonCompartir";
 import { Tooltip } from "@mui/material";
-import MapIcon from '@mui/icons-material/Map';
+// import MapIcon from "@mui/icons-material/Map";
 
 const enlaces = [
   {
@@ -28,11 +28,11 @@ const enlaces = [
     icono: InstagramIcon,
   },
 
-  {
-    nombre: "Mapa de Sedes",
-    url: "/mapa-de-las-sedes-uba-verde",
-    icono: MapIcon,
-  },
+  // {
+  //   nombre: "Mapa de Sedes",
+  //   url: "/mapa-de-las-sedes-uba-verde",
+  //   icono: MapIcon,
+  // },
 ];
 
 const Botones = () => {
